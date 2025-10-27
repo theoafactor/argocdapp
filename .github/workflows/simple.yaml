@@ -12,7 +12,7 @@ jobs:
 
         - name: Build Docker Image
           run: |
-            docker build -t theoafactor/argoapp .
+            docker build -t theoafactor/argoapp:1.2.0 .
         
         - name: Log in to DockerHub
           run: |
@@ -20,4 +20,4 @@ jobs:
 
         - name: Push to Docker Hub
           run: | 
-            docker push theoafactor/argoapp 
+            docker push theoafactor/argoapp:1.2.0

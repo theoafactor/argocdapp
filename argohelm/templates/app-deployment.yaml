@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: argoapp
-        image: theoafactor/argoapp
+        image: {{ .Values.image.repository }}
         ports:
         - containerPort: 80
