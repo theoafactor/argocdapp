@@ -2,7 +2,7 @@ name: ArgoApp
 on: 
     push: 
         branches:
-        - master
+        - deploy
 jobs: 
     simpledeploy:
         runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
         
         - name: Log in to DockerHub
           run: |
-            docker login -u username -p password
+            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
         - name: Push to Docker Hub
           run: | 
