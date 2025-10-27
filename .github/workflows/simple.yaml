@@ -20,4 +20,4 @@ jobs:
 
         - name: Push to Docker Hub
           run: | 
-            docker push theoafactor/argocdapp 
+            docker push theoafactor/argoapp 
