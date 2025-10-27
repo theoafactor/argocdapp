@@ -1,0 +1,23 @@
+name: ArgoApp
+on: 
+    push: 
+        branches:
+        - master
+jobs: 
+    simpledeploy:
+        runs-on: ubuntu-latest
+        steps: 
+        - name: Checkout from workflows
+          uses: actions/checkout@v4 
+
+        - name: Build Docker Image
+          run: |
+            docker build -t theoafactor/argoapp .
+        
+        - name: Log in to DockerHub
+          run: |
+            docker login -u username -p password
+
+        - name: Push to Docker Hub
+          run: | 
+            docker push theoafactor/argocdapp 
